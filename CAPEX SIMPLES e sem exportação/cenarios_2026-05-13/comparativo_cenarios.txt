@@ -1,0 +1,8 @@
+COMPARATIVO DE CENARIOS - LUCRO OPERACIONAL ANUAL
+============================================================
+
+Configuracao | Lucro operacional anual (R$) | Relatorio
+------------------------------------------------------------
+100_rede_trafo_500kw | 621,704.50 | relatorio_100_rede_trafo_500kw.txt
+trafo_75kw_pv_bess | 959,405.74 | relatorio_trafo_75kw_pv_bess.txt
+sem_bess_pv_rede | 868,484.84 | relatorio_sem_bess_pv_rede.txt

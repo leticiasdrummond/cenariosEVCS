@@ -1,0 +1,60 @@
+============================================================
+RELATÓRIO DA OTIMIZAÇÃO - MICRORREDE SIMPLIFICADA
+============================================================
+
+1. CAPACIDADES ÓTIMAS INSTALADAS:
+   - Geração Fotovoltaica (PV): 158.48 kW
+   - Bateria (BESS):           276.94 kWh
+   - Transformador:            75.00 kW
+
+2. RESULTADOS FINANCEIROS:
+   - Receita Anual com Recarga de VE: R$ 1,132,960.00
+   - Custo Anual com Importação de Energia: R$ 173,554.26
+   - Lucro Operacional Anual: R$ 959,405.74
+   - CAPEX Total (Investimento Inicial): R$ 459,032.37
+   - FUNÇÃO OBJETIVO (Lucro Anual - CAPEX): R$ 500,373.37
+
+3. DESPACHO HORÁRIO (kW / kWh):
+Hr   PV Ger     RedeImp   BESS Car   BESS Desc   SOC (kWh)   Demanda EV
+----------------------------------------------------------------------
+ 1       0.00       0.00       0.00      35.00     100.01      35.00
+ 2       0.00       0.00       0.00      28.00      69.24      28.00
+ 3       0.00       0.00       0.00      22.00      45.06      22.00
+ 4       0.00       0.00       0.00      20.00      23.09      20.00
+ 5      15.85       1.20       0.00       7.95      14.35      25.00
+ 6      47.54       0.00       0.00       0.46      13.85      48.00
+ 7      79.24       0.00       7.24       0.00      20.43      72.00
+ 8     110.94       0.00      12.94       0.00      32.21      98.00
+ 9     142.63       0.00      37.63       0.00      66.45     105.00
+10     158.48       0.00      43.48       0.00     106.02     115.00
+11     150.55       0.00      40.55       0.00     142.92     110.00
+12     142.63       0.00      42.63       0.00     181.72     100.00
+13     134.71       0.00      39.71       0.00     217.85      95.00
+14     126.78       0.00      36.78       0.00     251.32      90.00
+15     110.94       0.00      12.94       0.00     263.09      98.00
+16      79.24      32.76       0.00       0.00     263.09     112.00
+17      47.54      75.00       0.00       3.46     259.29     126.00
+18      15.85      75.00       0.00      44.15     210.78     135.00
+19       0.00      75.00       0.00      53.00     152.53     128.00
+20       0.00      75.00       0.00      41.00     107.48     116.00
+21       0.00      75.00       0.00      19.00      86.60      94.00
+22       0.00      75.00       3.00       0.00      89.33      72.00
+23       0.00      75.00      21.00       0.00     108.44      54.00
+24       0.00      75.00      33.00       0.00     138.47      42.00
+
+4. CHECAGENS DE QUALIDADE (boas praticas de otimizacao):
+   - Residuo maximo do balanco de energia: 0.000000 kW
+   - SOC abaixo do minimo: 0 horas
+   - SOC acima do maximo: 0 horas
+   - Horas com PV no limite (capacidade x irradiancia): 24
+   - Horas com importacao no limite do trafo: 8
+   - Horas com carga do BESS no limite: 0
+   - Horas com descarga do BESS no limite: 0
+
+5. FIGURAS RECOMENDADAS (como construir):
+   - Balanco de potencia: PV, rede, carga, BESS (serie horaria).
+   - SOC com limites: SOC + linhas em SOCmin/SOCmax.
+   - PV vs limite: P_pv_gen vs P_pv_cap * irradiancia_cf.
+   - Rede vs limite: P_grid_import vs P_trafo_cap.
+   - Limites BESS: carga/descarga vs c_rate * E_bess_cap.
+   - Residuo do balanco: serie de PV + rede + desc - carga - EV.
